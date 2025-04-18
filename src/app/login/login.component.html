@@ -1,0 +1,51 @@
+<div class="flex items-center justify-center min-h-screen bg-customBlue">
+  <form
+    (ngSubmit)="login()"
+    #loginForm="ngForm"
+    class="bg-white p-8 shadow-md rounded-md w-full max-w-sm space-y-6"
+  >
+    <div class="flex items-right justify-center h-full">
+      <img src="assets/logo.jpg" alt="Illustration" class="p-4" />
+    </div>
+    <h1 class="text-2xl font-bold text-center">Login</h1>
+
+    <div class="space-y-2">
+      <label class="block text-sm font-medium">Email</label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+        placeholder="Enter your email"
+      />
+    </div>
+
+    <div class="space-y-2">
+      <label class="block text-sm font-medium">Password</label>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+        placeholder="Enter your password"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-indigo-600 text-white font-semibold py-2 rounded-lg hover:bg-indigo-700 transition"
+    >
+      Login
+    </button>
+    <div class="flex justify-between text-sm text-indigo-600 mt-4">
+      <button   routerLink="/register" type="button" (click)="register()" class="hover:underline">
+        Register
+      </button>
+      <button routerLink="/forgotPassword"  type="button" (click)="forgotPassword()" class="hover:underline">
+        Forgot Password?
+      </button>
+    </div>
+  </form>
+</div>
