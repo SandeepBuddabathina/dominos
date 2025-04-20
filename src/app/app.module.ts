@@ -3,17 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component'; // adjust if needed
+import { LoginComponent } from './credintials/login/login.component';
+import { HeaderComponent } from './home/header/header.component'; // adjust if needed
+import { ForgotComponent } from './credintials/forgot/forgot.component'; // adjust if needed
+import { RegisterComponent } from './credintials/register/register.component'; // adjust if needed
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { MenuComponent } from './home/menu/menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent,
+    HeaderComponent,
+    ForgotComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

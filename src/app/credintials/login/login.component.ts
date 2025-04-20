@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  password: any;
-  email: any;
+  email: string = '';
+  password: string = '';
 
   constructor(private toastr: ToastrService, private router: Router) {}
+
   login() {
     const storedUsers = JSON.parse(localStorage.getItem('formdata') || '[]');
 
@@ -20,18 +22,19 @@ export class LoginComponent {
     );
 
     if (matchedUser) {
-      this.toastr.success('Login successful!', 'Success');
-      this.router.navigate(['/dashboard']);
+      this.toastr.success('🍕 Login successful!');
+      this.router.navigate(['/header']);
     } else {
-      this.toastr.error('Login Failed.', 'Error');
+      this.toastr.error('Invalid credentials or not registered. Please register first!');
     }
   }
 
   register() {
-    alert('Redirecting to registration...');
+    this.router.navigate(['/register']);
   }
 
   forgotPassword() {
-    alert('Redirecting to password recovery...');
+    this.toastr.info('Redirecting to password recovery...');
+    this.router.navigate(['/forgotPassword']);
   }
 }

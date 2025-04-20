@@ -1,0 +1,37 @@
+<div class="min-h-screen px-4 py-10 bg-white">
+  <h2 class="mb-10 text-[32px] font-bold text-center text-[#e51c23] tracking-wide">
+    DOMINO'S MENU
+  </h2>
+
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 bg-[#e51c23]">
+    <div
+      *ngFor="let item of menuItems"
+      class="relative bg-[#e51c23] text-white rounded-xl p-6 text-center flex flex-col items-center justify-between overflow-hidden"
+    >
+      <!-- Background pattern behind image -->
+      <div
+        class="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-20"
+        style="background-image: url('assets/bg-pattern.jpg');"
+      ></div>
+
+      <!-- Content on top -->
+      <h3 class="z-10 mb-4 text-xl font-bold">{{ item.title }}</h3>
+
+      <div class="z-10 p-4 rounded-md">
+        <img
+          [src]="item.image"
+          alt="{{ item.title }}"
+          class="object-cover w-48 h-48 mx-auto"
+        />
+      </div>
+
+      <p class="z-10 mt-4 text-sm text-white">{{ item.description }}</p>
+
+      <button
+        class="mt-6 border border-white text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-[#e51c23] transition-all duration-300 z-10"
+      >
+        VIEW ALL
+      </button>
+    </div>
+  </div>
+</div>
