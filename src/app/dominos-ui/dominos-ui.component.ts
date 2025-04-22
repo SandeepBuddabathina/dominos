@@ -4,62 +4,19 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-dominos-ui',
   templateUrl: './dominos-ui.component.html',
-  styleUrls: ['./dominos-ui.component.css']
+  styleUrls: ['./dominos-ui.component.css'],
 })
 export class DominosUiComponent {
   selectedAddress: string | null = null;
   showLocationModal = false;
   manualAddress: string = '';
   selectedMode: string = 'Delivery';
+  cartCount: number = 0;
 
-  constructor(private router: Router) {} // ✅ Added constructor with Router
+  isSidebarOpen = false;
 
-  openLocationModal() {
-    this.showLocationModal = true;
-  }
-
-  selectMode(mode: string) {
-    this.selectedMode = mode;
-
-    // ✅ Navigate to select-location component if Delivery is selected
-    if (mode === 'Delivery' || mode === 'Takeaway' || mode === 'Dine-in') {
-      this.router.navigate(['/select-location']);
-    }
-  }
-
-  closeModal() {
-    this.showLocationModal = false;
-  }
-
-  toggleLocationModal() {
-    this.showLocationModal = !this.showLocationModal;
-  }
-
-  detectLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
-          this.selectedAddress = `Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`;
-          this.showLocationModal = false;
-        },
-        (error) => {
-          alert('Location access denied or not available');
-        }
-      );
-    } else {
-      alert('Geolocation not supported by your browser');
-    }
-  }
-
-  confirmLocation() {
-    if (this.manualAddress.trim() !== '') {
-      this.selectedAddress = this.manualAddress.trim();
-      this.showLocationModal = false;
-    } else {
-      alert('Please enter an address or detect location');
-    }
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 
   cravings = [
@@ -81,4 +38,62 @@ export class DominosUiComponent {
     { img: 'assets/dominos/whatsnew4.jpg' },
     { img: 'assets/dominos/whatsnew5.jpg' },
   ];
+
+  constructor(private router: Router) {}
+
+  incrementCartCount() {
+    this.cartCount++;
+  }
+
+  openLocationModal() {
+    this.showLocationModal = true;
+  }
+
+  selectMode(mode: string) {
+    this.selectedMode = mode;
+    if (mode === 'Delivery' || mode === 'Takeaway' || mode === 'Dine-in') {
+      this.router.navigate(['/select-location']);
+    }
+  }
+
+  toggleLocationModal() {
+    this.showLocationModal = !this.showLocationModal;
+  }
+
+  closeModal() {
+    this.showLocationModal = false;
+  }
+ 
+  detectLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          this.selectedAddress = `Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(
+            4
+          )}`;
+          this.showLocationModal = false;
+        },
+        () => {
+          alert('Location access denied or not available');
+        }
+      );
+    } else {
+      alert('Geolocation not supported by your browser');
+    }
+  }
+
+  confirmLocation() {
+    if (this.manualAddress.trim()) {
+      this.selectedAddress = this.manualAddress.trim();
+      this.showLocationModal = false;
+    } else {
+      alert('Please enter an address or detect location');
+    }
+  }
+
+  addToCart() {
+    this.cartCount++;
+  }
 }

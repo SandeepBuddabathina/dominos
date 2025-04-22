@@ -16,6 +16,7 @@ import { DeliveryLocationComponent } from './delivery-location/delivery-location
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ContactComponent } from './contact/contact.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { GiftComponent } from './gift/gift.component';
@@ -34,6 +35,7 @@ import { GiftComponent } from './gift/gift.component';
     TopBestsellersComponent,
     MyprofileComponent,
     ContactComponent,
+    SidebarComponent,
     CartComponent,
     EnquiryComponent,
     GiftComponent,
@@ -54,4 +56,3 @@ import { GiftComponent } from './gift/gift.component';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-

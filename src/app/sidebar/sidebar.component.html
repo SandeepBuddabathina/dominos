@@ -1,0 +1,36 @@
+<!-- BACKDROP OVERLAY (Blurred & semi-transparent) -->
+<div
+  *ngIf="isSidebarOpen"
+  class="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-30"
+  (click)="closeSidebar()"
+></div>
+
+<!-- SIDEBAR ON LEFT -->
+<div
+  class="fixed top-0 left-0 h-full w-80 bg-white shadow-lg transform transition-transform duration-300 z-40"
+  [ngClass]="{
+    'translate-x-0': isSidebarOpen,
+    '-translate-x-full': !isSidebarOpen
+  }"
+>
+  <div class="p-4 border-b flex justify-between items-center">
+    <div>
+      <p class="font-semibold text-lg">Sumanth Kurapati</p>
+      <p class="text-sm text-gray-500">6305552499</p>
+      <a href="#" class="text-blue-500 text-sm">Edit</a>
+    </div>
+    <button (click)="closeSidebar()" class="text-xl font-bold text-gray-700">
+      ×
+    </button>
+  </div>
+
+  <ul class="p-4 space-y-3 text-gray-700 text-base">
+    <li class="hover:underline cursor-pointer">Deals & Offers</li>
+    <li class="hover:underline cursor-pointer">Track Current Order</li>
+    <li class="hover:underline cursor-pointer">Order History</li>
+    <li class="hover:underline cursor-pointer">Feedback</li>
+    <li class="hover:underline cursor-pointer">Terms & Conditions</li>
+    <li class="hover:underline cursor-pointer">Bulk Order</li>
+    <li class="hover:underline cursor-pointer">Nutritional Information</li>
+  </ul>
+</div>

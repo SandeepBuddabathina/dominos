@@ -11,6 +11,7 @@ import { DeliveryLocationComponent } from './delivery-location/delivery-location
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ContactComponent } from './contact/contact.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { GiftComponent } from './gift/gift.component';
@@ -23,14 +24,15 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'ui', component: DominosUiComponent },
+  { path: 'sidebar', component: SidebarComponent },
   { path: 'select-location', component: DeliveryLocationComponent },
   { path: 'top-bestsellers', component: TopBestsellersComponent },
-  {path: 'footer', component: FooterComponent},
-  {path: 'myprofile', component: MyprofileComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: 'enquiry', component: EnquiryComponent},
-  {path:'cart', component:CartComponent},
-  {path:'gift', component:GiftComponent},
+  { path: 'footer', component: FooterComponent },
+  { path: 'myprofile', component: MyprofileComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'enquiry', component: EnquiryComponent },
+  { path: 'gift', component: GiftComponent },
 ];
 
 @NgModule({
