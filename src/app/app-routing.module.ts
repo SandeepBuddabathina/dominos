@@ -11,6 +11,7 @@ import { DeliveryLocationComponent } from './delivery-location/delivery-location
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ContactComponent } from './contact/contact.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
   {path: 'myprofile', component: MyprofileComponent},
   {path: 'contact', component: ContactComponent},
+  {path:'cart', component:CartComponent}
 ];
 
 @NgModule({
