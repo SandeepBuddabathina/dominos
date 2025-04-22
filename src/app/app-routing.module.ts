@@ -10,6 +10,7 @@ import { DominosUiComponent } from './dominos-ui/dominos-ui.component';
 import { DeliveryLocationComponent } from './delivery-location/delivery-location.component';
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'top-bestsellers', component: TopBestsellersComponent },
   {path: 'footer', component: FooterComponent},
   {path: 'myprofile', component: MyprofileComponent},
+  {path: 'contact', component: ContactComponent},
 ];
 
 @NgModule({
