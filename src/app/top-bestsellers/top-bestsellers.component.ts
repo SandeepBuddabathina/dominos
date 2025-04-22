@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+
 interface Bestseller {
   title: string;
   description: string;
@@ -9,12 +10,15 @@ interface Bestseller {
   isVeg: boolean;
   top10: boolean;
 }
+
 @Component({
   selector: 'app-top-bestsellers',
   templateUrl: './top-bestsellers.component.html',
-  styleUrls: ['./top-bestsellers.component.css'] // optional, if you want custom styles
+  styleUrls: ['./top-bestsellers.component.css']
 })
 export class TopBestsellersComponent {
+  @Output() addToCart = new EventEmitter<any>();
+
   bestsellers: Bestseller[] = [
     {
       title: 'Peppy Paneer',
@@ -46,7 +50,6 @@ export class TopBestsellersComponent {
       isVeg: true,
       top10: true
     },
-
     {
       title: 'Veggie Paradise',
       description: 'The awesome foursome! Golden corn, black olives, capsicum, red paprika.',
@@ -56,7 +59,10 @@ export class TopBestsellersComponent {
       imageUrl: 'assets/top/veggie-paradise.webp',
       isVeg: true,
       top10: true
-    },
-    // …add up to 10 items
+    }
   ];
+
+  onAddToCart(item: Bestseller) {
+    this.addToCart.emit(item);
+  }
 }
