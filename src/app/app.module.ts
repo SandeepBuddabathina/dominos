@@ -10,6 +10,9 @@ import { RegisterComponent } from './credintials/register/register.component'; /
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './home/menu/menu.component';
+import { DominosUiComponent } from './dominos-ui/dominos-ui.component';
+import { DeliveryLocationComponent } from './delivery-location/delivery-location.component';
+import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
 
 
 @NgModule({
@@ -20,6 +23,9 @@ import { MenuComponent } from './home/menu/menu.component';
     HeaderComponent,
     ForgotComponent,
     MenuComponent,
+    DominosUiComponent,
+    DeliveryLocationComponent,
+    TopBestsellersComponent,
   ],
   imports: [
     BrowserModule,
