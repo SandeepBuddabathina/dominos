@@ -15,6 +15,7 @@ import { DominosUiComponent } from './dominos-ui/dominos-ui.component';
 import { DeliveryLocationComponent } from './delivery-location/delivery-location.component';
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     DeliveryLocationComponent,
     TopBestsellersComponent,
     MyprofileComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
