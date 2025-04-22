@@ -16,6 +16,7 @@ import { DeliveryLocationComponent } from './delivery-location/delivery-location
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ContactComponent } from './contact/contact.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CartComponent } from './cart/cart.component';
     TopBestsellersComponent,
     MyprofileComponent,
     ContactComponent,
+    SidebarComponent,
     CartComponent,
   ],
   imports: [
@@ -50,4 +52,3 @@ import { CartComponent } from './cart/cart.component';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-

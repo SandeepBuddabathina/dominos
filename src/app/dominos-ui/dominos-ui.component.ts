@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-dominos-ui',
   templateUrl: './dominos-ui.component.html',
-  styleUrls: ['./dominos-ui.component.css']
+  styleUrls: ['./dominos-ui.component.css'],
 })
 export class DominosUiComponent {
   selectedAddress: string | null = null;
@@ -12,6 +12,12 @@ export class DominosUiComponent {
   manualAddress: string = '';
   selectedMode: string = 'Delivery';
   cartCount: number = 0;
+
+  isSidebarOpen = false;
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
 
   cravings = [
     { title: 'Big Big Pizza', img: 'assets/dominos/bigbig.png' },
@@ -57,14 +63,16 @@ export class DominosUiComponent {
   closeModal() {
     this.showLocationModal = false;
   }
-
+ 
   detectLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
-          this.selectedAddress = `Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`;
+          this.selectedAddress = `Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(
+            4
+          )}`;
           this.showLocationModal = false;
         },
         () => {
