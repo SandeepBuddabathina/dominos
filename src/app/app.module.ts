@@ -4,16 +4,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './credintials/login/login.component';
-import { HeaderComponent } from './home/header/header.component'; // adjust if needed
-import { ForgotComponent } from './credintials/forgot/forgot.component'; // adjust if needed
-import { RegisterComponent } from './credintials/register/register.component'; // adjust if needed
+import { HeaderComponent } from './home/header/header.component';
+import { ForgotComponent } from './credintials/forgot/forgot.component';
+import { RegisterComponent } from './credintials/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './home/menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 import { DominosUiComponent } from './dominos-ui/dominos-ui.component';
 import { DeliveryLocationComponent } from './delivery-location/delivery-location.component';
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
-
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.compo
     HeaderComponent,
     ForgotComponent,
     MenuComponent,
+    FooterComponent,
     DominosUiComponent,
     DeliveryLocationComponent,
     TopBestsellersComponent,
@@ -38,9 +39,9 @@ import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.compo
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
-
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+

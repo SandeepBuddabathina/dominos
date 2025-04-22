@@ -1,29 +1,66 @@
-<div class="relative min-h-screen bg-center bg-cover" style="background-image: url('assets/images/pizza-bg1.jpg');">
+<div
+  class="relative min-h-screen bg-center bg-cover"
+  style="background-image: url('assets/images/pizza-bg1.jpg')"
+>
   <!-- Transparent Blue Overlay -->
   <div class="absolute inset-0 bg-[#006491]/60"></div>
 
   <!-- Form Container -->
   <div class="relative z-10 flex items-center justify-center min-h-screen px-4">
-    <div class="w-full max-w-md p-8 shadow-xl bg-white/95 backdrop-blur-md rounded-2xl">
-      
-      <!-- Domino's Logo -->
+    <div
+      class="w-full max-w-md p-8 shadow-xl bg`-white/95 backdrop-blur-md rounded-2xl"
+    >
+       <!-- Domino's Logo -->
       <div class="flex justify-center mb-6">
-        <img src="assets/images/dominos-logo.jpg" alt="Domino's Logo" class="object-contain h-16" />
+        <img
+          src="assets/images/dominos-logo.jpg"
+          alt="Domino's Logo"
+          class="object-contain h-16"
+        />
       </div>
-
       <!-- Form -->
-      <form [formGroup]="registerForm" (ngSubmit)="register()" class="space-y-4">
-        <input type="text" placeholder="Full Name" formControlName="name" class="input" />
-        <input type="email" placeholder="Email" formControlName="email" class="input" />
-        <input type="tel" placeholder="Mobile Number" formControlName="mobile" class="input" />
-        <input type="password" placeholder="Password" formControlName="password" class="input" />
-        <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" class="input" />
-
-        <button type="submit" class="w-full py-2 bg-[#E21836] hover:bg-red-700 text-white font-semibold rounded-xl">
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="register()"
+        class="space-y-4"
+      >
+        <input
+          type="text"
+          placeholder="Full Name" 
+          formControlName="name"
+          class="input"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          class="input"
+        />
+        <input
+          type="tel"
+          placeholder="Mobile Number"
+          formControlName="mobile"
+          class="input"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          class="input"
+        />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+          class="input"
+        />
+        <button
+          type="submit"
+          class="w-full py-2 bg-[#E21836] hover:bg-red-700 text-white font-semibold rounded-xl"
+        >
           Register
         </button>
       </form>
     </div>
   </div>
 </div>
-                  
