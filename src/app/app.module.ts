@@ -20,6 +20,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { GiftComponent } from './gift/gift.component';
+import { StoresComponent } from './stores/stores.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { GiftComponent } from './gift/gift.component';
     CartComponent,
     EnquiryComponent,
     GiftComponent,
+    StoresComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { GiftComponent } from './gift/gift.component';
+import { StoresComponent } from './stores/stores.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'top-bestsellers', component: TopBestsellersComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'myprofile', component: MyprofileComponent },
+  { path: 'stores', component: StoresComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'cart', component: CartComponent },
   { path: 'enquiry', component: EnquiryComponent },
