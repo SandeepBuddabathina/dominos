@@ -1,0 +1,86 @@
+<div class="min-h-screen bg-white">
+    <!-- Header -->
+    <div class="bg-blue-600 h-14 flex items-center">
+      <span class="text-white text-2xl pl-4">&#8592;</span>
+      <h1 class="text-white text-2xl pl-4">My Profile</h1>
+    </div>
+  
+    <!-- Profile Card -->
+    <div class="max-w-md mx-auto mt-10 p-4 rounded-xl shadow bg-white">
+      <!-- User Info -->
+      <div class="rounded shadow">
+        <div class="bg-blue-100 flex items-center justify-between p-4 rounded-t">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">S</div>
+            <span class="text-sm font-medium">Sumanth Kurapati</span>
+          </div>
+        </div>
+  
+        <!-- Phone Field -->
+        <div class="flex items-center justify-between border-t p-4">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M2.25 6.75C2.25 5.784 3.034 5 4 5h.382a1.5 1.5 0 011.342.833l1.2 2.4a1.5 1.5 0 01-.2 1.567L5.25 11.25a11.25 11.25 0 005.25 5.25l1.45-1.45a1.5 1.5 0 011.567-.2l2.4 1.2A1.5 1.5 0 0119 19.618V20a1.5 1.5 0 01-1.5 1.5H17A15.75 15.75 0 012.25 6.75z"/>
+            </svg>
+            <div *ngIf="!editingPhone">{{ phone }}</div>
+            <input *ngIf="editingPhone" type="text" [(ngModel)]="phone" class="border px-2 py-1 rounded text-sm" />
+          </div>
+          <button *ngIf="!editingPhone" (click)="editingPhone = true">
+            ✏️
+          </button>
+          <button *ngIf="editingPhone" (click)="savePhone()">
+            ✅
+          </button>
+        </div>
+  
+        <!-- Email Field -->
+        <div class="flex items-center justify-between border-t p-4">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 5.25v13.5a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18.75V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25zM3.75 6l8.25 6 8.25-6"/>
+            </svg>
+            <div *ngIf="!editingEmail">{{ email }}</div>
+            <input *ngIf="editingEmail" type="email" [(ngModel)]="email" class="border px-2 py-1 rounded text-sm" />
+          </div>
+          <button *ngIf="!editingEmail" (click)="editingEmail = true">
+            ✏️
+          </button>
+          <button *ngIf="editingEmail" (click)="saveEmail()">
+            ✅
+          </button>
+        </div>
+      </div>
+  
+      <!-- Options -->
+      <div class="mt-4 rounded shadow divide-y">
+        <div class="flex items-center justify-between p-4">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 7.5A1.5 1.5 0 014.5 6h15A1.5 1.5 0 0121 7.5v9a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 16.5v-9zM18 12.75a.75.75 0 100-1.5.75.75 0 000 1.5z"/>
+            </svg>
+            <span class="text-sm">Domino's Wallet</span>
+          </div>
+          <span class="bg-yellow-400 text-sm px-2 py-0.5 rounded">0 Points</span>
+        </div>
+        <div class="flex items-center gap-2 p-4">
+          <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4.5 3.75A.75.75 0 015.25 3h13.5a.75.75 0 01.75.75v16.5a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V3.75zM6.75 6.75h10.5m-10.5 4.5h10.5m-10.5 4.5h6.75"/>
+          </svg>
+          <span class="text-sm">My Orders</span>
+        </div>
+        <div class="flex items-center gap-2 p-4">
+          <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 2.25c4.556 0 7.5 3.12 7.5 7.5 0 4.179-3.706 9.153-6.585 12.163a1.125 1.125 0 01-1.83 0C8.206 18.903 4.5 13.929 4.5 9.75c0-4.38 2.944-7.5 7.5-7.5zM12 12a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"/>
+          </svg>
+          <span class="text-sm">My Addresses</span>
+        </div>
+        <div class="flex items-center gap-2 p-4">
+          <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 15.75l3-3m0 0l-3-3m3 3H3.75"/>
+          </svg>
+          <span routerLink="/login" class="text-sm">Logout</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  

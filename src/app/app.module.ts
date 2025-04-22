@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DominosUiComponent } from './dominos-ui/dominos-ui.component';
 import { DeliveryLocationComponent } from './delivery-location/delivery-location.component';
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.compo
     DominosUiComponent,
     DeliveryLocationComponent,
     TopBestsellersComponent,
+    MyprofileComponent,
   ],
   imports: [
     BrowserModule,

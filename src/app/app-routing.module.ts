@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DominosUiComponent } from './dominos-ui/dominos-ui.component';
 import { DeliveryLocationComponent } from './delivery-location/delivery-location.component';
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,7 +20,9 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'ui', component: DominosUiComponent },
   { path: 'select-location', component: DeliveryLocationComponent },
-  { path: 'top-bestsellers', component: TopBestsellersComponent }
+  { path: 'top-bestsellers', component: TopBestsellersComponent },
+  {path: 'footer', component: FooterComponent},
+  {path: 'myprofile', component: MyprofileComponent},
 ];
 
 @NgModule({
