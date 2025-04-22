@@ -16,6 +16,7 @@ import { DeliveryLocationComponent } from './delivery-location/delivery-location
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ContactComponent } from './contact/contact.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ContactComponent } from './contact/contact.component';
     TopBestsellersComponent,
     MyprofileComponent,
     ContactComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

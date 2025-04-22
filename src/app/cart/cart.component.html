@@ -1,0 +1,136 @@
+<!-- Header Section -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-[#0058a3] text-white px-4 py-3 text-sm"> 
+    <!-- Left: Hamburger + Logo -->
+    <div class="flex items-center space-x-2">
+      <button class="md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <img src="assets/dom2.png" alt="Domino's Logo" class="h-6 md:h-7" />
+    </div>
+  
+    <!-- Center: Explore Menu -->
+    <div class="hidden md:flex">
+      <a href="#" class="text-white hover:underline font-medium">Explore Menu</a>
+    </div>
+  
+    <!-- Right: Account -->
+    <div class="flex items-center space-x-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M5.121 17.804A8.962 8.962 0 0112 15c2.219 0 4.254.806 5.879 2.139M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+      <div class="text-right text-xs leading-tight">
+        <p class="font-semibold">MY ACCOUNT</p>
+        <p class="text-white/80">Login | Signup</p>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content Layout -->
+  <div class="bg-gray-100 p-6 font-sans text-sm text-gray-800 min-h-screen">
+    <div class="flex flex-col lg:flex-row gap-6">
+  
+      <!-- Left: Cart and Add-ons -->
+      <div class="w-full lg:w-2/3 space-y-6">
+        <!-- Cart Box -->
+        <div class="bg-white p-4 shadow rounded">
+          <h2 class="text-lg font-semibold mb-4">1 Item you have selected</h2>
+          <div class="flex justify-between items-start border p-4 rounded">
+            <div class="flex items-start space-x-4">
+              <img src="assets/menu/cheese-burst.jpg" alt="Farmhouse" class="h-20 w-20 rounded object-cover">
+              <div>
+                <h3 class="font-semibold">Farmhouse</h3>
+                <p class="text-gray-500 text-xs">Delightful combination of onion, capsicum, tomato & grilled mushroom</p>
+                <p class="text-xs text-gray-500 mt-1">Regular | New Hand Tossed</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="text-lg font-semibold">₹ 259.00</p>
+              <div class="flex items-center mt-2 border rounded px-2">
+                <button class="px-2">−</button>
+                <span class="px-2">1</span>
+                <button class="px-2">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Recommended Add-ons -->
+        <div>
+            <h3 class="font-bold mb-2">Complete your meal</h3>
+          <div class="flex space-x-4 overflow-x-auto pb-2">
+            <div
+              *ngFor="let item of addons"
+              class="w-40 bg-white rounded shadow flex-shrink-0"
+            >
+              <!-- Image Container with Name & Price Overlay -->
+              <div class="relative">
+                <img [src]="item.img" alt="{{ item.name }}" class="w-full h-40 object-cover rounded-t" />
+                <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 text-white text-xs px-2 py-1">
+                  <div class="flex justify-between">
+                    <span>{{ item.name }}</span>
+                    <span class="font-semibold">₹{{ item.price }}</span>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Text-only Green ADD Button -->
+              <div class="p-2">
+                <button class="w-full text-green-600 text-xs font-semibold py-1">
+                  ADD
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Right: Delivery Address, Offers, Price -->
+      <div class="w-full lg:w-1/3 flex flex-col space-y-4">
+  
+        <!-- Delivery Address -->
+        <div class="bg-white p-4 shadow rounded">
+          <h3 class="font-semibold mb-2">Choose a delivery address</h3>
+          <button class="p-2 w-full rounded text-left text-gray-600">Select Location</button>
+          <button class="mt-2 p-2 w-full rounded text-left text-gray-600">Login to use saved addresses</button>
+        </div>
+  
+        <!-- Offers -->
+        <div class="bg-white p-4 shadow rounded">
+          <h3 class="font-semibold mb-2">Offers</h3>
+          <button class="p-2 w-full rounded text-left text-gray-600">Select offer / Apply coupon</button>
+        </div>
+  
+        <!-- Price Details -->
+        <div class="bg-white p-4 shadow rounded">
+          <h3 class="font-semibold mb-4">Price Details</h3>
+          <div class="flex justify-between text-sm">
+            <span>Sub Total</span>
+            <span>₹ 259.00</span>
+          </div>
+          <div class="flex justify-between text-sm mt-1">
+            <span>Discount</span>
+            <span>-</span>
+          </div>
+          <div class="flex justify-between text-sm mt-1">
+            <span>Taxes and Charges</span>
+            <span>₹ 27.95</span>
+          </div>
+          <hr class="my-2">
+          <div class="flex justify-between font-semibold">
+            <span>Grand Total</span>
+            <span>₹ 286.95</span>
+          </div>
+          <button class="mt-4 bg-[#e4002b] text-white w-full py-2 rounded text-sm font-bold hover:bg-red-700 transition">
+            Proceed to Pay
+          </button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <app-footer></app-footer>
+  
