@@ -17,6 +17,7 @@ import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.compo
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ContactComponent } from './contact/contact.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MyprofileComponent,
     ContactComponent,
     SidebarComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,4 +52,3 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
