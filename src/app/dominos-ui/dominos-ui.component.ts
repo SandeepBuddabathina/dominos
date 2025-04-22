@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-dominos-ui',
@@ -12,7 +13,6 @@ export class DominosUiComponent {
   manualAddress: string = '';
   selectedMode: string = 'Delivery';
   cartCount: number = 0;
-
   cravings = [
     { title: 'Big Big Pizza', img: 'assets/dominos/bigbig.png' },
     { title: 'Cheese Burst Pizza', img: 'assets/dominos/cheeseburst.jpg' },
@@ -33,7 +33,7 @@ export class DominosUiComponent {
     { img: 'assets/dominos/whatsnew5.jpg' },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cartService: CartService) {}
 
   incrementCartCount() {
     this.cartCount++;
@@ -85,7 +85,17 @@ export class DominosUiComponent {
     }
   }
 
-  addToCart() {
+  addToCart(item: any) {
+    const cartItem = {
+      ...item,
+      qty: 1
+    };
+  
+    this.cartService.addItem(cartItem);
     this.cartCount++;
+  } 
+  goToCart() {
+    this.router.navigate(['/cart']);
   }
+  
 }

@@ -14,8 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { DominosUiComponent } from './dominos-ui/dominos-ui.component';
 import { DeliveryLocationComponent } from './delivery-location/delivery-location.component';
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
-import { MyprofileComponent } from './myprofile/myprofile.component';
-import { ContactComponent } from './contact/contact.component';
+import { MyprofileComponent } from './credintials/myprofile/myprofile.component';
+import { ContactComponent } from './credintials/contact/contact.component';
 import { CartComponent } from './cart/cart.component';
 
 @NgModule({

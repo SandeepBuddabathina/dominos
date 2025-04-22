@@ -66,11 +66,12 @@
       </svg>
       Offers
     </button>
-    <button class="flex flex-col items-center justify-center p-2 text-sm relative">
+    <button class="relative flex flex-col items-center justify-center p-2 text-sm">
       <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1 5m1-5h10m0 0l1 5m-1-5H7" />
       </svg>
-      <span class="text-xs">View Cart</span>
+      <span class="text-xs text-blue-600 cursor-pointer" (click)="goToCart()">View Cart</span>
+
       <span *ngIf="cartCount > 0" class="absolute top-0 right-0 px-1 text-xs text-white bg-red-500 rounded-full">{{ cartCount }}</span>
     </button>
   </div>
@@ -98,6 +99,5 @@
   </div>
 
   <!-- Top Bestsellers Section -->
-  <app-top-bestsellers (addToCart)="incrementCartCount()"></app-top-bestsellers>
-
+  <app-top-bestsellers (addToCart)="addToCart($event)"></app-top-bestsellers>
 </div>
