@@ -5,17 +5,19 @@ import { ForgotComponent } from './credintials/forgot/forgot.component';
 import { LoginComponent } from './credintials/login/login.component';
 import { RegisterComponent } from './credintials/register/register.component';
 import { MenuComponent } from './home/menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path:'login', component: LoginComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'forgot',component:ForgotComponent},
-  {path:'header',component:HeaderComponent},
-  {path: 'menu',component:MenuComponent}
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'forgot', component: ForgotComponent },
+  { path: 'header', component: HeaderComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'footer', component: FooterComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

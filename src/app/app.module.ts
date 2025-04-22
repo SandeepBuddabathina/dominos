@@ -10,6 +10,7 @@ import { RegisterComponent } from './credintials/register/register.component'; /
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './home/menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { MenuComponent } from './home/menu/menu.component';
     HeaderComponent,
     ForgotComponent,
     MenuComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
