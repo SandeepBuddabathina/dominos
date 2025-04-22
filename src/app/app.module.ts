@@ -18,6 +18,8 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ContactComponent } from './contact/contact.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
+import { EnquiryComponent } from './enquiry/enquiry.component';
+import { GiftComponent } from './gift/gift.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { CartComponent } from './cart/cart.component';
     ContactComponent,
     SidebarComponent,
     CartComponent,
+    EnquiryComponent,
+    GiftComponent,
   ],
   imports: [
     BrowserModule,
