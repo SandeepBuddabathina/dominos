@@ -17,6 +17,8 @@ import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.compo
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ContactComponent } from './contact/contact.component';
 import { CartComponent } from './cart/cart.component';
+import { EnquiryComponent } from './enquiry/enquiry.component';
+import { GiftComponent } from './gift/gift.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { CartComponent } from './cart/cart.component';
     MyprofileComponent,
     ContactComponent,
     CartComponent,
+    EnquiryComponent,
+    GiftComponent,
   ],
   imports: [
     BrowserModule,

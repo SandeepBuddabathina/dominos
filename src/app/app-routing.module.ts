@@ -12,6 +12,8 @@ import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.compo
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ContactComponent } from './contact/contact.component';
 import { CartComponent } from './cart/cart.component';
+import { EnquiryComponent } from './enquiry/enquiry.component';
+import { GiftComponent } from './gift/gift.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,7 +28,9 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
   {path: 'myprofile', component: MyprofileComponent},
   {path: 'contact', component: ContactComponent},
-  {path:'cart', component:CartComponent}
+  {path: 'enquiry', component: EnquiryComponent},
+  {path:'cart', component:CartComponent},
+  {path:'gift', component:GiftComponent},
 ];
 
 @NgModule({
