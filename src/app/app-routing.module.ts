@@ -15,6 +15,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { GiftComponent } from './gift/gift.component';
+import { StoresComponent } from './stores/stores.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrderplacedComponent } from './orderplaced/orderplaced.component';
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'top-bestsellers', component: TopBestsellersComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'myprofile', component: MyprofileComponent },
+  { path: 'stores', component: StoresComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'cart', component: CartComponent },
   { path: 'enquiry', component: EnquiryComponent },

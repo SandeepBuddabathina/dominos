@@ -20,8 +20,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { GiftComponent } from './gift/gift.component';
+import { StoresComponent } from './stores/stores.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrderplacedComponent } from './orderplaced/orderplaced.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { OrderplacedComponent } from './orderplaced/orderplaced.component';
     CartComponent,
     EnquiryComponent,
     GiftComponent,
-
+    StoresComponent,
     OrderplacedComponent,
     PaymentComponent,
   ],
