@@ -15,6 +15,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { GiftComponent } from './gift/gift.component';
+import { PaymentComponent } from './payment/payment.component';
+import { OrderplacedComponent } from './orderplaced/orderplaced.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -32,7 +34,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'cart', component: CartComponent },
   { path: 'enquiry', component: EnquiryComponent },
+  {path: 'payment', component: PaymentComponent},
   { path: 'gift', component: GiftComponent },
+  {path: 'orderplaced', component: OrderplacedComponent},
 ];
 
 @NgModule({
