@@ -42,7 +42,7 @@ export class RegisterComponent {
       name,
       email,
       mobile,
-      password
+      password // you can encode here if needed
     };
 
     const existingUsers = JSON.parse(localStorage.getItem('formdata') || '[]');
@@ -56,11 +56,31 @@ export class RegisterComponent {
     existingUsers.push(userData);
     localStorage.setItem('formdata', JSON.stringify(existingUsers));
 
+    // Console log masked values for reference
+    console.log('Masked Email:', this.maskEmail(email));
+    console.log('Masked Mobile:', this.maskMobile(mobile));
+    console.log('Masked Password:', this.maskPassword(password));
+
     this.toastr.success('🍕 Registered Successfully!');
     this.registerForm.reset();
 
     setTimeout(() => {
       this.router.navigate(['/login']);
     }, 1500);
+  }
+
+  // Masking Functions
+  maskEmail(email: string): string {
+    const [user, domain] = email.split('@');
+    const maskedUser = user[0] + '***' + user.slice(-1);
+    return `${maskedUser}@${domain}`;
+  }
+
+  maskMobile(mobile: string): string {
+    return mobile.replace(/(\d{2})\d{6}(\d{2})/, '$1******$2');
+  }
+
+  maskPassword(password: string): string {
+    return '*'.repeat(password.length);
   }
 }

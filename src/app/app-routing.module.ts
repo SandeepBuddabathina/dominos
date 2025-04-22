@@ -9,13 +9,15 @@ import { FooterComponent } from './footer/footer.component';
 import { DominosUiComponent } from './dominos-ui/dominos-ui.component';
 import { DeliveryLocationComponent } from './delivery-location/delivery-location.component';
 import { TopBestsellersComponent } from './top-bestsellers/top-bestsellers.component';
-import { MyprofileComponent } from './myprofile/myprofile.component';
-import { ContactComponent } from './contact/contact.component';
+import { MyprofileComponent } from './credintials/myprofile/myprofile.component';
+import { ContactComponent } from './credintials/contact/contact.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { GiftComponent } from './gift/gift.component';
 import { StoresComponent } from './stores/stores.component';
+import { PaymentComponent } from './payment/payment.component';
+import { OrderplacedComponent } from './orderplaced/orderplaced.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -34,7 +36,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'cart', component: CartComponent },
   { path: 'enquiry', component: EnquiryComponent },
+  {path: 'payment', component: PaymentComponent},
   { path: 'gift', component: GiftComponent },
+  {path: 'orderplaced', component: OrderplacedComponent},
 ];
 
 @NgModule({
