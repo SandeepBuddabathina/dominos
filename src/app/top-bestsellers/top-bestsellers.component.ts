@@ -11,13 +11,21 @@ interface Bestseller {
   top10: boolean;
 }
 
+interface CartItem {
+  name: string;
+  desc: string;
+  price: number;
+  img: string;
+  qty: number;
+}
+
 @Component({
   selector: 'app-top-bestsellers',
   templateUrl: './top-bestsellers.component.html',
   styleUrls: ['./top-bestsellers.component.css']
 })
 export class TopBestsellersComponent {
-  @Output() addToCart = new EventEmitter<any>();
+  @Output() addToCart = new EventEmitter<CartItem>();
 
   bestsellers: Bestseller[] = [
     {
@@ -62,7 +70,14 @@ export class TopBestsellersComponent {
     }
   ];
 
-  onAddToCart(item: Bestseller) {
-    this.addToCart.emit(item);
+  onAddToCart(item: Bestseller): void {
+    const cartItem: CartItem = {
+      name: item.title,
+      desc: item.description,
+      price: item.price,
+      img: item.imageUrl,
+      qty: 1
+    };
+    this.addToCart.emit(cartItem);
   }
 }

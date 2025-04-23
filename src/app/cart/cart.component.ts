@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   cartItems: any[] = [];
   totalPrice: number = 0;
   userLocation: string = '';
+
   addons = [
     { name: 'Garlic Breadsticks + Cheesy Dip', price: 137.57, img: 'assets/cart/garlicbread.jfif' },
     { name: 'Garlic Breadsticks + Beverage', price: 149, img: 'assets/cart/breaddrink.jfif' },
@@ -21,17 +22,19 @@ export class CartComponent implements OnInit {
     { name: 'Cheesy Dip', price: 30, img: 'assets/cart/cheesedip.jfif' },
   ];
 
+
   constructor(private cartService: CartService,
     private locationService: LocationService,
     private router: Router
   ) {}
 
+
   ngOnInit(): void {
-    // Get cart items from CartService
     this.cartItems = this.cartService.getItems();
     this.totalPrice = this.cartService.getTotalPrice();
     this.getUserLocation();
   }
+
   goToPayment(): void {
     const grandTotal = this.totalPrice + 27.95;
     this.router.navigate(['/payment'], {
@@ -49,44 +52,46 @@ export class CartComponent implements OnInit {
     this.cartService.addItem(item);
     this.updateCart();
   }
+
   getUserLocation(): void {
-    this.locationService
-      .getLocation()
-      .then((coords: any) => {
-        this.locationService
-          .getAddressFromCoordinates(coords.latitude, coords.longitude)
-          .then((address: string) => {
-            this.userLocation = address;  // Store the user's address
-          })
-          .catch((error) => {
-            console.error('Error fetching address:', error);
-          });
-      })
-      .catch((error) => {
-        console.error('Error retrieving location:', error);
-      });
+    this.locationService.getLocation().then((coords: any) => {
+      this.locationService.getAddressFromCoordinates(coords.latitude, coords.longitude)
+        .then((address: string) => {
+          this.userLocation = address;
+        })
+        .catch(error => console.error('Error fetching address:', error));
+    }).catch(error => console.error('Error retrieving location:', error));
   }
-  // Method to update cart after adding an item
-  updateCart() {
+
+  updateCart(): void {
     this.cartItems = this.cartService.getItems();
     this.totalPrice = this.cartService.getTotalPrice();
   }
 
-  // Method to remove item from the cart
-  removeItem(item: any) {
+  removeItem(item: any): void {
     this.cartService.removeItem(item);
     this.updateCart();
   }
 
-  // Method to handle increasing quantity of item
-  increaseQuantity(item: any) {
-    this.cartService.increaseQuantity(item); // This method will increase the quantity and adjust price
+  increaseQuantity(item: any): void {
+    this.cartService.increaseQuantity(item);
     this.updateCart();
   }
 
-  // Method to handle decreasing quantity of item
-  decreaseQuantity(item: any) {
-    this.cartService.decreaseQuantity(item); // This method will decrease the quantity and adjust price
+  decreaseQuantity(item: any): void {
+    this.cartService.decreaseQuantity(item);
     this.updateCart();
   }
+
+  addToCart(item: any) {
+    const existing = this.cartItems.find(ci => ci.name === item.name);
+    if (existing) {
+      this.increaseQuantity(existing);
+    } else {
+      this.cartItems.push({ ...item, qty: 1 });
+    }
+    this.updateCart();
+  }
+  
 }
+
