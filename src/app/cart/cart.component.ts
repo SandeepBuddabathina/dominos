@@ -46,10 +46,6 @@ export class CartComponent implements OnInit {
       }
     });
   }
-  
-  // Method to add item to the cart with dynamic image
-
-
   getUserLocation(): void {
     this.locationService.getLocation().then((coords: any) => {
       this.locationService.getAddressFromCoordinates(coords.latitude, coords.longitude)
