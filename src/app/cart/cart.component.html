@@ -4,15 +4,14 @@
 
     <!-- Left: Cart and Add-ons -->
     <div class="w-full space-y-6 lg:w-2/3">
-      
+
       <!-- Cart Box -->
       <div class="p-4 bg-white rounded shadow" *ngIf="cartItems.length > 0">
         <h2 class="mb-4 text-lg font-semibold">{{ cartItems.length }} Item{{ cartItems.length > 1 ? 's' : '' }} you have selected</h2>
 
         <div *ngFor="let item of cartItems" class="flex items-start justify-between p-4 mb-3 border rounded">
           <div class="flex items-start space-x-4">
-            <!-- Display Image dynamically from the item -->
-            <img [src]="item.img" alt="{{ item.name }}" class="object-cover w-20 h-20 rounded">
+            <img [src]="item.img" alt="{{ item.name }}" class="object-cover w-20 h-20 rounded" />
             <div>
               <h3 class="font-semibold">{{ item.name }}</h3>
               <p class="text-xs text-gray-500">{{ item.desc || 'Delightful combination of onion, capsicum, tomato & grilled mushroom' }}</p>
@@ -20,7 +19,7 @@
             </div>
           </div>
           <div class="text-right">
-            <p class="text-lg font-semibold">₹ {{ item.price * (item.qty || 1) }}</p> <!-- Total Price based on quantity -->
+            <p class="text-lg font-semibold">₹ {{ item.price * (item.qty || 1) }}</p>
             <div class="flex items-center px-2 mt-2 border rounded">
               <button (click)="decreaseQuantity(item)" class="px-2">−</button>
               <span class="px-2">{{ item.qty || 1 }}</span>
@@ -30,7 +29,7 @@
         </div>
       </div>
 
-      <!-- No Items Message -->
+      <!-- Empty Cart Message -->
       <div *ngIf="cartItems.length === 0" class="p-4 text-center bg-white rounded shadow">
         <p class="text-gray-500">Your cart is empty. Add some delicious items 🍕</p>
       </div>
@@ -49,9 +48,8 @@
                 </div>
               </div>
             </div>
-
             <div class="p-2">
-              <button class="w-full py-1 text-xs font-semibold text-green-600" (click)="addToCart(item)">
+              <button (click)="addToCart(item)" class="w-full py-1 text-xs font-semibold text-green-600">
                 ADD
               </button>
             </div>
@@ -63,20 +61,19 @@
     <!-- Right: Delivery Address, Offers, Price -->
     <div class="flex flex-col w-full space-y-4 lg:w-1/3">
 
-<!-- Delivery Address Section -->
-<div class="p-4 bg-white rounded shadow">
-  <h3 class="mb-2 font-semibold">Choose a delivery address</h3>
-  <button class="w-full p-2 text-left text-gray-600 rounded" *ngIf="!userLocation">
-    <span>Fetching your location...</span>
-  </button>
-  <button class="w-full p-2 text-left text-gray-600 rounded" *ngIf="userLocation">
-    <span>{{ userLocation }}</span>
-  </button>
-  <button class="w-full p-2 mt-2 text-left text-gray-600 rounded">
-    Login to use saved addresses
-  </button>
-</div>
-
+      <!-- Delivery Address Section -->
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="mb-2 font-semibold">Choose a delivery address</h3>
+        <button class="w-full p-2 text-left text-gray-600 rounded" *ngIf="!userLocation">
+          <span>Fetching your location...</span>
+        </button>
+        <button class="w-full p-2 text-left text-gray-600 rounded" *ngIf="userLocation">
+          <span>{{ userLocation }}</span>
+        </button>
+        <button class="w-full p-2 mt-2 text-left text-gray-600 rounded">
+          Login to use saved addresses
+        </button>
+      </div>
 
       <!-- Offers -->
       <div class="p-4 bg-white rounded shadow">
