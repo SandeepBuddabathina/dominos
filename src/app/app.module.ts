@@ -23,6 +23,7 @@ import { GiftComponent } from './gift/gift.component';
 import { StoresComponent } from './stores/stores.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrderplacedComponent } from './orderplaced/orderplaced.component';
+import { MenuItemsComponent } from './menu-items/menu-items.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { OrderplacedComponent } from './orderplaced/orderplaced.component';
     StoresComponent,
     OrderplacedComponent,
     PaymentComponent,
+    MenuItemsComponent,
   ],
   imports: [
     BrowserModule,
