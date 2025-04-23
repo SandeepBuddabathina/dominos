@@ -1,6 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
-import { LocationService } from '../location.service';
+import { LocationService } from '../services/location.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -20,7 +22,8 @@ export class CartComponent implements OnInit {
   ];
 
   constructor(private cartService: CartService,
-    private locationService: LocationService
+    private locationService: LocationService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -29,7 +32,18 @@ export class CartComponent implements OnInit {
     this.totalPrice = this.cartService.getTotalPrice();
     this.getUserLocation();
   }
-
+  goToPayment(): void {
+    const grandTotal = this.totalPrice + 27.95;
+    this.router.navigate(['/payment'], {
+      state: {
+        cartItems: this.cartItems,
+        totalPrice: this.totalPrice,
+        taxes: 27.95,
+        grandTotal: grandTotal
+      }
+    });
+  }
+  
   // Method to add item to the cart with dynamic image
   addToCart(item: any): void {
     this.cartService.addItem(item);

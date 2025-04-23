@@ -5,7 +5,7 @@ import { LocationService } from './location.service';
 describe('LocationService', () => {
   let service: LocationService;
 
-  beforeEach(() => {
+  beforeEach(() => {  
     TestBed.configureTestingModule({});
     service = TestBed.inject(LocationService);
   });

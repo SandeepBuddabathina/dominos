@@ -104,9 +104,12 @@
           <span>Grand Total</span>
           <span>₹ {{ totalPrice + 27.95 }}</span>
         </div>
-        <button class="mt-4 bg-[#e4002b] text-white w-full py-2 rounded text-sm font-bold hover:bg-red-700 transition">
-          Proceed to Pay
-        </button>
+        <button
+        class="mt-4 bg-[#e4002b] text-white w-full py-2 rounded text-sm font-bold hover:bg-red-700 transition"
+        (click)="goToPayment()"
+      >
+        Proceed to Pay
+      </button>
       </div>
     </div>
   </div>

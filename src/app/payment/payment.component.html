@@ -1,118 +1,131 @@
 <!-- Page Header -->
-<div class="bg-white shadow-sm p-4 border-b">
-    <h1 class="text-2xl font-semibold">Payment Options</h1>
-  </div>
-  
-  <!-- Main Layout -->
-  <div class="flex flex-col lg:flex-row lg:justify-between p-4 gap-4 max-w-7xl mx-auto font-sans pb-24">
-    <!-- Left: Payment Methods -->
-    <div class="flex-1 bg-white border rounded shadow-sm p-4 space-y-4">
-      <!-- Saved Payment -->
-      <div>
-        <h3 class="font-medium mb-2">Saved payment options</h3>
-        <div class="border rounded p-4 flex items-center justify-between hover:shadow-sm">
-          <div class="flex items-center gap-2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" class="h-5" />
-            <span>OneCard Credit Card</span>
-            <span class="text-gray-500">XXXX9606</span>
-          </div>
-          <input type="radio" name="payment" (click)="selectPayment('OneCard')" />
-        </div>
-      </div>
-  
-      <!-- UPI Apps -->
-      <div>
-        <div class="flex items-center justify-between">
-          <h3 class="font-medium">UPI Apps</h3>
-          <span class="text-xl">⌄</span>
-        </div>
-        <div class="border rounded p-4 flex justify-between items-center mt-2">
-          <div class="flex items-center gap-2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/UPI-Logo-vector.svg" class="h-5" />
-            <span>Pay by any UPI App</span>
-          </div>
-          <input type="radio" name="payment" (click)="selectPayment('UPI')" />
-        </div>
-      </div>
-  
-      <!-- Wallet -->
-      <div>
-        <div class="flex items-center justify-between">
-          <h3 class="font-medium">Wallet</h3>
-          <span class="text-xl">⌄</span>
-        </div>
-        <div class="border rounded p-4 flex justify-between items-center mt-2">
-          <div class="flex items-center gap-2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/MobiKwik_Logo.png" class="h-5" />
-            <span>MobiKwik</span>
-          </div>
-          <input type="radio" name="payment" (click)="selectPayment('MobiKwik')" />
-        </div>
-        <div class="text-center text-blue-600 text-sm mt-1 cursor-pointer">View all wallets ⌄</div>
-      </div>
-  
-      <!-- Credit Card -->
-      <div>
-        <div class="flex items-center justify-between">
-          <h3 class="font-medium">Credit Card</h3>
-          <span class="text-xl">⌄</span>
-        </div>
-        <div class="border rounded p-4 flex justify-between items-center mt-2 text-blue-600">
-          <span class="flex items-center gap-2">➕ Add New Card</span>
-          <input type="radio" name="payment" (click)="selectPayment('NewCard')" />
-        </div>
-      </div>
-  
-      <!-- Instruction -->
-      <div class="text-sm text-gray-500 pt-4 border-t">Select payment method to proceed further</div>
-    </div>
-  
-    <!-- Right: Order Summary -->
-    <div class="w-full lg:w-1/3 bg-white border rounded shadow-sm p-4">
-      <!-- Delivery Info -->
-      <div class="text-sm text-gray-600 mb-2">
+<div class="p-4 bg-white border-b shadow-sm">
+  <h1 class="text-2xl font-semibold">Payment Options</h1>
+</div>
+
+<!-- Main Layout -->
+<div class="flex flex-col gap-4 p-4 pb-24 mx-auto font-sans lg:flex-row lg:justify-between max-w-7xl">
+  <!-- Left: Payment Methods -->
+  <div class="flex-1 p-4 space-y-4 bg-white border rounded shadow-sm">
+    <!-- Saved Payment -->
+    <div>
+      <h3 class="mb-2 font-medium">Saved payment options</h3>
+      <div class="flex items-center justify-between p-4 border rounded hover:shadow-sm">
         <div class="flex items-center gap-2">
-          📍 <span>Deliver to</span> <strong>Home, aashraya hospitalites pg Jai H...</strong>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" class="h-5" />
+          <span>OneCard Credit Card</span>
+          <span class="text-gray-500">XXXX9606</span>
         </div>
-        <div class="flex items-center gap-2 mt-1">⏰ Delivery Now</div>
-      </div>
-  
-      <!-- Price Details -->
-      <div class="border-t pt-4">
-        <h3 class="font-semibold text-lg mb-2">Price Details</h3>
-        <div class="flex justify-between mb-1 text-sm">
-          <span>Sub Total (1 item)</span>
-          <span>₹309.00</span>
-        </div>
-        <div class="flex justify-between text-sm">
-          <span>Taxes and Charges</span>
-          <span>₹36.45</span>
-        </div>
-        <div class="flex justify-between font-semibold mt-2">
-          <span>Grand Total</span>
-          <span>₹345.45</span>
-        </div>
-      </div>
-  
-      <!-- Icons -->
-      <div class="flex items-center justify-around mt-6 text-sm text-gray-500">
-        <div class="flex flex-col items-center">🔥<span>Hot Deliveries</span></div>
-        <div class="flex flex-col items-center">🛡️<span>Secure Payment</span></div>
+        <input type="radio" name="payment" (click)="selectPayment('OneCard')" />
       </div>
     </div>
-  </div>
-  
-  <!-- Sticky Place Order Button -->
-  <div class="fixed bottom-0 left-0 w-full bg-white border-t shadow-md p-4 z-50">
-    <div class="max-w-7xl mx-auto">
-      <button
-        class="w-full bg-gray-800 text-white py-3 rounded text-lg"
-        (click)="placeOrder()"
-      >
-        Place Order ₹345
-      </button>
+
+    <!-- UPI Apps -->
+    <div>
+      <div class="flex items-center justify-between">
+        <h3 class="font-medium">UPI Apps</h3>
+        <span class="text-xl">⌄</span>
+      </div>
+      <div class="flex items-center justify-between p-4 mt-2 border rounded">
+        <div class="flex items-center gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/UPI-Logo-vector.svg" class="h-5" />
+          <span>Pay by any UPI App</span>
+        </div>
+        <input type="radio" name="payment" (click)="selectPayment('UPI')" />
+      </div>
+    </div>
+
+    <!-- Wallet -->
+    <div>
+      <div class="flex items-center justify-between">
+        <h3 class="font-medium">Wallet</h3>
+        <span class="text-xl">⌄</span>
+      </div>
+      <div class="flex items-center justify-between p-4 mt-2 border rounded">
+        <div class="flex items-center gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/MobiKwik_Logo.png" class="h-5" />
+          <span>MobiKwik</span>
+        </div>
+        <input type="radio" name="payment" (click)="selectPayment('MobiKwik')" />
+      </div>
+      <div class="mt-1 text-sm text-center text-blue-600 cursor-pointer">View all wallets ⌄</div>
+    </div>
+
+    <!-- Credit Card -->
+    <div>
+      <div class="flex items-center justify-between">
+        <h3 class="font-medium">Credit Card</h3>
+        <span class="text-xl">⌄</span>
+      </div>
+      <div class="flex items-center justify-between p-4 mt-2 text-blue-600 border rounded">
+        <span class="flex items-center gap-2">➕ Add New Card</span>
+        <input type="radio" name="payment" (click)="selectPayment('NewCard')" />
+      </div>
+    </div>
+
+    <div class="pt-4 text-sm text-gray-500 border-t">
+      Select payment method to proceed further
     </div>
   </div>
-  
-  <!-- Order Confirmation Component -->
-  <app-orderplaced [visible]="showConfirmation"></app-orderplaced>
+
+  <!-- Right: Order Summary -->
+  <div class="w-full p-4 bg-white border rounded shadow-sm lg:w-1/3">
+    <div  class="mb-2 text-sm text-gray-600">
+      <div class="items-center gap-6 ">
+        📍 <span>Deliver to:</span>
+        <p class="mt-2">{{ deliveryAddress }}</p><br/><!-- Display dynamic address here -->
+      </div>
+      <div class="flex items-center gap-2 mt-1">⏰ Delivery Now</div>
+    </div>
+    
+    
+
+    <div class="pt-4 border-t">
+      <h3 class="mb-2 text-lg font-semibold">Price Details</h3>
+      <div class="flex justify-between mb-1 text-sm">
+        <span>Sub Total</span>
+        <span>₹{{ subTotal.toFixed(2) }}</span>
+      </div>
+      <div class="flex justify-between text-sm">
+        <span>Taxes and Charges</span>
+        <span>₹{{ taxAmount.toFixed(2) }}</span>
+      </div>
+      <div class="flex justify-between mt-2 font-semibold">
+        <span>Grand Total</span>
+        <span>₹{{ grandTotal.toFixed(2) }}</span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-around mt-6 text-sm text-gray-500">
+      <div class="flex flex-col items-center">🔥<span>Hot Deliveries</span></div>
+      <div class="flex flex-col items-center">🛡️<span>Secure Payment</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky Place Order Button -->
+<div class="fixed bottom-0 left-0 z-50 w-full p-4 bg-white border-t shadow-md">
+  <div class="mx-auto max-w-7xl">
+    <button
+      class="w-full py-3 text-lg text-white bg-gray-800 rounded"
+      (click)="placeOrder()"
+    >
+      Place Order ₹{{ grandTotal.toFixed(2) }}
+    </button>
+  </div>
+</div>
+<div
+  *ngIf="visible"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+>
+  <div class="p-6 text-center bg-white rounded-lg shadow-lg w-80">
+    <h2 class="mb-4 text-xl font-semibold">🎉 Order Placed!</h2>
+    <p class="mb-4 text-gray-600">Thank you for your order.</p>
+    <button class="px-4 py-2 text-white bg-blue-600 rounded" (click)="visible = true">
+      Close
+    </button>
+  </div>
+</div>
+
+<!-- Order Confirmation Component -->
+<app-orderplaced [visible]="showConfirmation"></app-orderplaced>
