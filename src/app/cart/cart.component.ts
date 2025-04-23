@@ -48,10 +48,7 @@ export class CartComponent implements OnInit {
   }
   
   // Method to add item to the cart with dynamic image
-  addToCart(item: any): void {
-    this.cartService.addItem(item);
-    this.updateCart();
-  }
+
 
   getUserLocation(): void {
     this.locationService.getLocation().then((coords: any) => {
