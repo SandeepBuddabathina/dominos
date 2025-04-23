@@ -1,106 +1,135 @@
 <!-- header.component.html (reused here) -->
 <header class="bg-[#004b91] text-white sticky top-0 z-50 shadow-md">
-    <div class="flex items-center justify-between px-6 py-3">
-      <!-- Left: Domino's logo -->
-      <div class="flex items-center gap-2">
-        <img src="assets/dom2.png" alt="Domino's Logo" class="h-6" />
-      </div>
-  
-      <!-- Center: Nav links -->
-      <nav class="hidden md:flex gap-6 font-semibold text-sm">
-        <a href="#" class="hover:underline">OUR MENU</a>
-        <a href="#" class="hover:underline">DOMINO'S STORES</a>
-        <a href="#" class="hover:underline">INSIDE DOMINOS</a>
-        <a href="#" class="hover:underline">GIFT CARD</a>
-        <a href="#" class="hover:underline">CONTACT</a>
-      </nav>
-  
-      <!-- Right: CTA button -->
-      <a
-        href="#"
-        class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded font-bold text-sm"
-      >
-        ORDER ONLINE NOW
-        <span class="ml-1">▶</span>
-      </a>
+  <div class="flex items-center justify-between px-6 py-3">
+    <!-- Left: Domino's logo -->
+    <div class="flex items-center gap-2">
+      <img src="assets/dom2.png" alt="Domino's Logo" class="h-6" />
     </div>
-  </header>
-  
-  <!-- Main content -->
-  <div class="px-6 py-4 bg-gray-100">
-    <!-- Breadcrumbs -->
-    <nav class="text-sm text-gray-600 mb-4">
-      <a href="#" class="text-blue-600">Home</a> /
-      <span class="text-red-600">Store Locations</span>
+
+    <!-- Center: Nav links -->
+    <nav class="hidden md:flex gap-6 font-semibold text-sm">
+      <a href="#" class="hover:underline">OUR MENU</a>
+      <a href="#" class="hover:underline">DOMINO'S STORES</a>
+      <a href="#" class="hover:underline">INSIDE DOMINOS</a>
+      <a href="#" class="hover:underline">GIFT CARD</a>
+      <a href="#" class="hover:underline">CONTACT</a>
     </nav>
-  
-    <!-- Page title -->
-    <h1 class="text-2xl font-bold text-blue-900 mb-6">
-      Domino’s Pizza Stores Near Me
-    </h1>
-  
-    <!-- Layout -->
-    <div class="grid grid-cols-12 gap-4">
-      <!-- Left panel: Search + Store Cards -->
-      <div class="col-span-12 md:col-span-4 bg-white p-4 shadow rounded">
-        <div class="bg-blue-900 text-white p-2 mb-4">
-          <div class="flex">
-            <button class="flex-1 font-semibold">Search Nearby</button>
-            <button class="flex-1 bg-blue-800">Advanced Search</button>
-          </div>
+
+    <!-- Right: CTA button -->
+    <a
+      href="#"
+      class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded font-bold text-sm"
+    >
+      ORDER ONLINE NOW
+      <span class="ml-1"></span>
+    </a>
+  </div>
+</header>
+
+<div class="bg-gray-100 p-6">
+  <!-- Breadcrumb -->
+  <nav class="text-sm text-gray-600 mb-4">
+    <a href="#" class="text-blue-600">Home</a> /
+    <span class="text-red-600">Store Locations</span>
+  </nav>
+
+  <!-- Title -->
+  <h1 class="text-2xl font-bold text-blue-900 mb-6">Domino’s Pizza Stores Near Me</h1>
+
+  <div class="grid grid-cols-12 gap-6">
+    <!-- Left Column -->
+    <div class="col-span-12 md:col-span-4">
+      <!-- Search Panel -->
+      <div class="bg-[#004b91] text-white rounded shadow">
+        <div class="flex">
+          <button class="flex-1 py-2 font-bold border-b-4 border-green-400">Search Nearby</button>
+          <button class="flex-1 py-2 bg-[#002f5f]">Advanced Search</button>
         </div>
-  
-        <input
-          type="text"
-          placeholder="Locality/City/Store"
-          class="w-full border px-3 py-2 mb-3"
-        />
-        <button class="bg-red-600 text-white w-full py-2 font-semibold">
-          SEARCH
-        </button>
-  
-        <h2 class="mt-6 mb-2 font-semibold text-blue-800">
-          Nearby Pizza Stores
-        </h2>
-  
-        <!-- Store card example -->
-        <div class="bg-blue-50 p-3 border rounded mb-4 shadow">
-          <div class="flex items-center gap-2 mb-2">
-            <img src="assets/dominos-icon.png" alt="Domino's" class="w-8 h-8" />
-            <span class="font-bold text-blue-800">CONNAUGHT PLACE</span>
+        <div class="p-4">
+          <input type="text" placeholder="Locality/City/Store" class="w-full p-2 text-black rounded mb-3" />
+          <button class="bg-red-600 w-full py-2 font-bold rounded">SEARCH</button>
+        </div>
+      </div>
+
+      <!-- Store Cards -->
+      <div class="mt-4 bg-white rounded shadow p-3 h-[600px] overflow-y-auto">
+        <h2 class="text-blue-900 font-bold mb-3">Nearby Pizza Stores</h2>
+
+        <!-- Store Card Template -->
+        <div class="bg-blue-50 p-3 rounded border mb-4 shadow">
+          <img src="assets/dom-bg.png" class="w-13 h-11 mb-2" alt="Domino's Logo" />
+          <div class="flex items-center gap-3 mb-2">
+            <div>
+              <h3 class="text-blue-900 font-bold text-lg">CONNAUGHT PLACE</h3>
+              <div class="flex items-center text-yellow-500 text-sm">
+                ★ 4.0 <span class="text-gray-600 ml-1">(11619)</span>
+              </div>
+            </div>
           </div>
-          <p class="text-sm text-gray-700">
-            GROUND & MEZZANINE FLOOR, SHOP NO. M-40, DELHI - 110001
+          <p class="text-sm text-gray-700 mb-1">
+            GROUND & MEZZANINE FLOOR, SHOP NO. M-40, PROPERTY NO. 40, PLOT NO. 4...
           </p>
-          <div class="text-sm text-gray-600 mt-2">
-            📞 1800 208 1234 <br />
-            🕒 10:57 AM – 1:00 AM <br />
+          <div class="text-sm text-gray-600 space-y-1 mt-1">
+            📞 1800 208 1234<br />
+            🕒 10:57 AM – 1:00 AM<br />
             🚗 Delivery | 🥡 Takeaway
           </div>
-          <div class="flex justify-between mt-3">
-            <button class="text-blue-600">CALL</button>
-            <button class="text-blue-600">NAVIGATE</button>
-            <button class="bg-red-600 text-white px-2 py-1 rounded">ORDER</button>
+          <div class="mt-2 text-sm">
+            <p class="font-semibold text-blue-800 mb-1">Reviews</p>
+            <div class="text-yellow-500">★★★★★</div>
+          </div>
+          <div class="flex justify-between items-center mt-3">
+            <button class="text-blue-600 font-bold">CALL</button>
+            <button class="text-blue-600 font-bold">NAVIGATE</button>
+            <button class="bg-red-600 text-white font-bold px-3 py-1 rounded">ORDER</button>
           </div>
         </div>
-  
-        <!-- You can duplicate the above block for more store cards -->
-      </div>
-  
-      <!-- Right panel: Static map -->
-      <div class="col-span-12 md:col-span-8">
-        <div class="bg-white p-4 rounded shadow">
-          <div class="text-gray-800 text-sm mb-3">
-            When you want a tummy-filling meal or want to make your day better
-            with a pizza...
-          </div>
-          <!-- Static map image -->
-          <img src="assets/map01.jpg" class="w-full rounded shadow" alt="Map" />
 
-          <!-- OR use placeholder if no API key -->
-          <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/OpenStreetMap_Delhi_centered.png" class="w-full rounded shadow" alt="Map Placeholder" /> -->
+        <!-- Another Store -->
+        <div class="bg-blue-50 p-3 rounded border mb-4 shadow">
+          <img src="assets/dom-bg.png" class="w-13 h-11 mb-2" alt="Domino's Logo" />
+          <div class="flex items-center gap-3 mb-2">
+            <div>
+              <h3 class="text-blue-900 font-bold text-lg">DLF CITY CENTRE</h3>
+              <div class="flex items-center text-yellow-500 text-sm">
+                ★ 4.2 <span class="text-gray-600 ml-1">(244)</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-gray-700 mb-1">
+            FC-1, SECOND FLOOR, DLF FOOD COURT, DLF CITY CENTER, CHANDIGARH TECHNOLOGY...
+          </p>
+          <div class="text-sm text-gray-600 space-y-1 mt-1">
+            📞 1800 208 1234<br />
+            🕒 10:30 AM – 11:00 PM<br />
+            🚗 Delivery | 🥡 Takeaway
+          </div>
+          <div class="mt-2 text-sm">
+            <p class="font-semibold text-blue-800 mb-1">Reviews</p>
+            <div class="text-yellow-500">★★★★★</div>
+          </div>
+          <div class="flex justify-between items-center mt-3">
+            <button class="text-blue-600 font-bold">CALL</button>
+            <button class="text-blue-600 font-bold">NAVIGATE</button>
+            <button class="bg-red-600 text-white font-bold px-3 py-1 rounded">ORDER</button>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-span-12 md:col-span-8 space-y-4">
+      <!-- Description -->
+      <div class="bg-white p-4 rounded shadow text-sm text-gray-800">
+        When you want a tummy-filling meal or when you want a warm pizza to make your day better, what can you do but head to Domino's! Whether dining in or getting it delivered, Domino's stores near you will serve it hot and fast.
+      </div>
+
+      <!-- Map (Moved Below Description) -->
+      <div class="bg-white p-2 rounded shadow">
+        <img src="assets/images/map01.JPG" alt="Map" class="w-full h-[680px] rounded object-cover" />
       </div>
     </div>
   </div>
+</div>
+
 <app-footer></app-footer>
