@@ -18,6 +18,7 @@ import { GiftComponent } from './gift/gift.component';
 import { StoresComponent } from './stores/stores.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrderplacedComponent } from './orderplaced/orderplaced.component';
+import { MenuItemsComponent } from './menu-items/menu-items.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path: 'payment', component: PaymentComponent},
   { path: 'gift', component: GiftComponent },
   {path: 'orderplaced', component: OrderplacedComponent},
+  {path: 'menu-items', component: MenuItemsComponent}
 ];
 
 @NgModule({

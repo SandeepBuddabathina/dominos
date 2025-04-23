@@ -1,0 +1,93 @@
+<!-- Main container with padding and white background -->
+<div class="min-h-screen px-4 py-10 bg-white">
+  
+    <!-- Title -->
+    <h2 class="mb-10 text-[32px] font-bold text-center text-[#e51c23] tracking-wide">
+      DOMINO'S MENU
+    </h2>
+  
+    <!-- Grid of menu cards -->
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 bg-[#e51c23] rounded-xl p-4">
+      
+      <!-- Loop through menuItems and render each card -->
+      <div
+        *ngFor="let item of menuItems"
+        class="relative bg-[#e51c23] text-white rounded-xl p-6 text-center flex flex-col items-center justify-between overflow-hidden"
+      >
+        
+        <!-- Background pattern for decoration -->
+        <div
+          class="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-20"
+          style="background-image: url('assets/bg-pattern.jpg');"
+        ></div>
+  
+        <!-- Menu item title -->
+        <h3 class="z-10 mb-4 text-xl font-bold">{{ item.title }}</h3>
+  
+        <!-- Menu item image -->
+        <div class="z-10 p-4 rounded-md">
+          <img
+            [src]="item.image"
+            alt="{{ item.title }}"
+            class="object-cover w-48 h-48 mx-auto"
+          />
+        </div>
+  
+        <!-- Menu item description -->
+        <p class="z-10 mt-4 text-sm text-white">{{ item.description }}</p>
+  
+        <!-- Button to view items under a category -->
+        <button
+          class="mt-6 border border-white text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-[#e51c23] transition-all duration-300 z-10"
+          (click)="viewCategory(item.category)"
+        >
+          VIEW ALL
+        </button>
+      </div>
+    </div>
+  
+    <!-- Filtered content section shown when a category is selected -->
+    <div class="mt-10 bg-gray-50 p-6 rounded-xl shadow-lg" *ngIf="selectedCategory">
+      
+      <!-- Veg category items -->
+      <div *ngIf="selectedCategory === 'veg'">
+        <h3 class="text-xl font-bold text-[#e51c23] mb-4">Veg Pizzas</h3>
+        <ul class="text-gray-700 list-disc list-inside">
+          <li>Cheese & Corn</li>
+          <li>Margherita</li>
+          <li>Farmhouse</li>
+        </ul>
+      </div>
+  
+      <!-- Non-veg category items -->
+      <div *ngIf="selectedCategory === 'nonveg'">
+        <h3 class="text-xl font-bold text-[#e51c23] mb-4">Non-Veg Pizzas</h3>
+        <ul class="text-gray-700 list-disc list-inside">
+          <li>Pepper Barbecue Chicken</li>
+          <li>Chicken Dominator</li>
+          <li>Peri-Peri Chicken</li>
+        </ul>
+      </div>
+  
+      <!-- Pizza Mania category items -->
+      <div *ngIf="selectedCategory === 'mania'">
+        <h3 class="text-xl font-bold text-[#e51c23] mb-4">Pizza Mania</h3>
+        <ul class="text-gray-700 list-disc list-inside">
+          <li>Paneer & Onion</li>
+          <li>Classic Corn</li>
+          <li>Golden Delight</li>
+        </ul>
+      </div>
+  
+      <!-- Back button to return to the full menu -->
+      <div class="mt-6 text-center">
+        <button
+          class="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300 text-sm font-medium"
+          (click)="selectedCategory = null"
+        >
+          Back to Menu
+        </button>
+      </div>
+    </div>
+  </div>
+  
