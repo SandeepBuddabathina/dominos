@@ -2,38 +2,22 @@
   <div class="max-w-full px-2 mx-auto">
     <!-- Heading -->
     <div class="mb-4 text-center">
-      <h2
-        class="flex items-center justify-center text-2xl font-semibold text-yellow-800"
-      >
-        <img
-          src="assets/top/logo.png"
-          alt="Top 10 Icon"
-          class="h-8 mr-2 w-18"ng s
-        /><br />
+      <h2 class="flex items-center justify-center text-2xl font-semibold text-yellow-800">
+        <img src="assets/top/logo.png" alt="Top 10 Icon" class="h-8 mr-2 w-18" />
       </h2>
       <h1>Top 10 Bestsellers</h1>
       <p class="flex items-center justify-center mt-1 text-sm text-gray-600">
-        <svg
-          class="w-4 h-4 mr-1 text-gray-500"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            d="M10 2a6 6 0 016 6c0 4.418-6 10-6 10S4 12.418 4 8a6 6 0 016-6z"
-          />
+        <svg class="w-4 h-4 mr-1 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 2a6 6 0 016 6c0 4.418-6 10-6 10S4 12.418 4 8a6 6 0 016-6z" />
         </svg>
         In Your Locality
       </p>
     </div>
 
     <!-- Scrollable Card Section -->
-    <div
-      class="flex px-2 py-3 space-x-6 overflow-x-auto scrollbar-thin scrollbar-thumb-yellow-400"
-    >
+    <div class="flex px-2 py-3 space-x-6 overflow-x-auto scrollbar-thin scrollbar-thumb-yellow-400">
       <ng-container *ngFor="let item of bestsellers">
-        <div
-          class="relative flex-shrink-0 overflow-hidden shadow-xl w-96 h-96 rounded-2xl group"
-        >
+        <div class="relative flex-shrink-0 overflow-hidden shadow-xl w-96 h-96 rounded-2xl group">
           <!-- Full Image Background -->
           <img
             [src]="item.imageUrl"
@@ -46,10 +30,9 @@
           >
             Customise →
           </a>
+
           <!-- Gradient Overlay -->
-          <div
-            class="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
-          ></div>
+          <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
           <!-- TOP 10 Badge -->
           <div
@@ -59,8 +42,6 @@
           >
             <p>Domino's<br />TOP 10</p>
           </div>
-
-          <!-- Customise Label -->
 
           <!-- Content Section -->
           <div class="absolute bottom-0 z-20 w-full px-5 py-4 text-white">
@@ -82,13 +63,13 @@
                 <p class="text-sm text-white/70">
                   {{ item.sizeLabel }} | {{ item.crustLabel }}
                 </p>
-
-                <!-- Dotted Line Below Size & Crust -->
                 <div class="my-2 border-t-2 border-white border-dashed"></div>
               </div>
+
+              <!-- ✅ Add to Cart Button -->
               <button
                 class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition"
-                 (click)="onAddToCart(item)" 
+                (click)="onAddToCart(item)"
               >
                 Add +
               </button>
