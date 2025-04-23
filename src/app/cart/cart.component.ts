@@ -46,9 +46,6 @@ export class CartComponent implements OnInit {
       }
     });
   }
-  
-
-
   getUserLocation(): void {
     this.locationService.getLocation().then((coords: any) => {
       this.locationService.getAddressFromCoordinates(coords.latitude, coords.longitude)
