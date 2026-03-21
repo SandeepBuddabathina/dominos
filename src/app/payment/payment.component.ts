@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { CartService } from '../services/cart.service';
 import { LocationService } from '../services/location.service'; // Import the location service
 @Component({
@@ -14,9 +16,21 @@ export class PaymentComponent implements OnInit {
   grandTotal: number = 0;
   showConfirmation: boolean = false;
   deliveryAddress: string = ''; 
+  cartItems: any[] = []; // Added cartItems property
+
   constructor(private cartService: CartService,
-    private locationService: LocationService
-  ) {}
+    private locationService: LocationService,
+    private router: Router,
+    private location: Location
+  ) {
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation?.extras.state) {
+      this.cartItems = navigation.extras.state['cartItems'];
+      this.subTotal = navigation.extras.state['totalPrice'] || 0;
+      this.taxAmount = navigation.extras.state['taxes'] || 27.95;
+      this.grandTotal = navigation.extras.state['grandTotal'] || (this.subTotal + this.taxAmount);
+    }
+  }
 
   ngOnInit(): void {
     this.updatePriceDetails();
@@ -34,6 +48,9 @@ export class PaymentComponent implements OnInit {
     }, 3000);
   }
 
+  goBack() {
+    this.location.back();
+  }
 
   updatePriceDetails() {
     this.subTotal = this.cartService.getTotalPrice();

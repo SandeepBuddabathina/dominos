@@ -18,10 +18,11 @@ export class LoginComponent {
 
     const matchedUser = storedUsers.find(
       (user: any) =>
-        user.email === this.email && user.password === this.password
+        (user.email === this.email || user.mobile === this.email) && user.password === this.password
     );
 
     if (matchedUser) {
+      localStorage.setItem('loggedInUser', JSON.stringify(matchedUser));
       this.toastr.success('🍕 Login successful!');
       this.router.navigate(['/header']);
     } else {

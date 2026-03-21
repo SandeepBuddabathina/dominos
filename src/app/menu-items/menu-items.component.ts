@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-menu-items',
   templateUrl: './menu-items.component.html',
   styleUrls: ['./menu-items.component.css'],
 })
-export class MenuItemsComponent {
+export class MenuItemsComponent implements OnInit {
   selectedCategory: string | null = null;
+
+  constructor(private location: Location) {}
+
+  ngOnInit(): void {}
+
+  goBack() {
+    this.location.back();
+  }
 
   menuItems = [
     {

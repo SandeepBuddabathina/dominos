@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-delivery-location',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class DeliveryLocationComponent {
   recentlySearched: string[] = [];
+
+  constructor(private location: Location) {}
+
+  goBack() {
+    this.location.back();
+  }
 
   detectLocation() {
     if (navigator.geolocation) {
