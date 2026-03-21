@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { LocationService } from '../services/location.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -25,8 +26,13 @@ export class CartComponent implements OnInit {
 
   constructor(private cartService: CartService,
     private locationService: LocationService,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {}
+
+  goBack() {
+    this.location.back();
+  }
 
 
   ngOnInit(): void {
